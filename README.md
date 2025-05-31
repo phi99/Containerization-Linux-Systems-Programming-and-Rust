@@ -16,7 +16,7 @@ Let's try to create a container in Rust by isolating a new process and to a UTS 
 -child() sets hostname, and spawns another process 
 -Then Bash runs inside the namespace; parent child() process waits for it 
 ```
-
+cargo run -- run /bin/bash
 
 
 ```text
