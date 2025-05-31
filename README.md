@@ -6,7 +6,8 @@
 
 
 ```text
-Container is basically build out of Linux features such as chroot, namespaces, and cgroups. Namespaces controls what a process can see.
+Container is basically a process that could only see the process(es) that it creates (its child processes), has its own network stack, and seem to have its own filesystem with root directory not related to root on the host.
+It is built out of Linux features such as chroot, namespaces, and cgroups. Namespaces controls what a process can see.
 There are several types of namespace in Linux, such as UTS (for hostname and domain names that the process is aware of), Process ID, Moount POints, Network, User and Group IDs, Inter-process communications (IPC), Control Groups(cgroups).
 When linux system is started, it has a single namespace and a process is always in one namespace of each type. However, additional namespaes could be created and assign process into them.
 Let's try to create a container in Rust by isolating a new process and to a UTS namespace.
